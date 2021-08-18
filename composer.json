@@ -1,0 +1,28 @@
+{
+    "name": "nguyenanhung/helpers-mobile",
+    "type": "library",
+    "description": "Basic Helper for Mobile Device",
+    "keywords": [
+        "php",
+        "helper"
+    ],
+    "homepage": "https://github.com/nguyenanhung/helpers-mobile",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Nguyen An Hung",
+            "email": "dev@nguyenanhung.com",
+            "homepage": "https://nguyenanhung.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "mobiledetect/mobiledetectlib": "^2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "nguyenanhung\\Classes\\Helper\\Mobile\\": "src/"
+        }
+    }
+}
