@@ -18,7 +18,7 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\AppleLink')) {
      * @author    713uk13m <dev@nguyenanhung.com>
      * @copyright 713uk13m <dev@nguyenanhung.com>
      */
-    class AppleLink implements ProjectInterface
+    class AppleLink implements Environment
     {
         use VersionTrait;
 
@@ -37,7 +37,7 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\AppleLink')) {
          *
          * @see   https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MailLinks/MailLinks.html
          */
-        public static function mailLink(string $mailto = '', string $cc = '', string $subject = '', string $body = ''): string
+        public static function mailLink($mailto = '', $cc = '', $subject = '', $body = '')
         {
             $data = array();
             if (!empty($cc)) {
@@ -67,7 +67,7 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\AppleLink')) {
          *
          * @see   https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/PhoneLinks/PhoneLinks.html
          */
-        public static function phoneLink(string $phone_number = ''): string
+        public static function phoneLink($phone_number = '')
         {
             return 'tel:' . $phone_number;
         }
@@ -84,7 +84,7 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\AppleLink')) {
          *
          * @see   https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/FacetimeLinks/FacetimeLinks.html
          */
-        public static function FaceTimeVideoLink(string $username = ''): string
+        public static function FaceTimeVideoLink($username = '')
         {
             return 'facetime:' . $username;
         }
@@ -101,7 +101,7 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\AppleLink')) {
          *
          * @see   https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/FacetimeLinks/FacetimeLinks.html
          */
-        public static function FaceTimeAudioLink(string $username = ''): string
+        public static function FaceTimeAudioLink($username = '')
         {
             return 'facetime-audio:' . $username;
         }
@@ -119,7 +119,7 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\AppleLink')) {
          *
          * @see   https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/SMSLinks/SMSLinks.html
          */
-        public static function smsLink(string $phone_number = '', string $body = ''): string
+        public static function smsLink($phone_number = '', $body = '')
         {
             // sms:+1-303-499-7111?body=Interested%20in%20your%20product
             $link = 'sms:' . $phone_number;

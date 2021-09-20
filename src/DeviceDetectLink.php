@@ -20,12 +20,13 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\DeviceDetectLink')) {
      * @author    713uk13m <dev@nguyenanhung.com>
      * @copyright 713uk13m <dev@nguyenanhung.com>
      */
-    class DeviceDetectLink implements ProjectInterface
+    class DeviceDetectLink implements Environment
     {
         use VersionTrait;
 
         /** @var array Mảng dữ liệu các link device */
         protected $data;
+
         /** @var string Link điều hướng dữ liệu */
         protected $link;
 
@@ -39,7 +40,7 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\DeviceDetectLink')) {
          * @copyright: 713uk13m <dev@nguyenanhung.com>
          * @time     : 08/18/2021 39:24
          */
-        public function setData(array $data = []): DeviceDetectLink
+        public function setData($data = array())
         {
             $this->data = $data;
 
@@ -54,14 +55,14 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\DeviceDetectLink')) {
          * @copyright: 713uk13m <dev@nguyenanhung.com>
          * @time     : 08/18/2021 39:16
          */
-        public function detectDevice(): DeviceDetectLink
+        public function detectDevice()
         {
             $detect      = new MobileDetect();
             $linkDefault = $this->data['default'];
             if ($detect->isMobile()) {
-                $this->link = $this->data['link_mobile'] ?? $linkDefault;
+                $this->link = isset($this->data['link_mobile']) ? $this->data['link_mobile'] : $linkDefault;
             } elseif ($detect->isTablet()) {
-                $this->link = $this->data['link_tablet'] ?? $linkDefault;
+                $this->link = isset($this->data['link_tablet']) ? $this->data['link_tablet'] : $linkDefault;
             } else {
                 $this->link = $linkDefault;
             }
@@ -77,32 +78,32 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\DeviceDetectLink')) {
          * @copyright: 713uk13m <dev@nguyenanhung.com>
          * @time     : 08/18/2021 38:47
          */
-        public function detectSystem(): DeviceDetectLink
+        public function detectSystem()
         {
             $detect      = new MobileDetect();
             $linkDefault = $this->data['default'];
             if ($detect->is('iOS')) {
-                $this->link = $this->data['ios'] ?? $linkDefault;
+                $this->link = isset($this->data['ios']) ? $this->data['ios'] : $linkDefault;
             } elseif ($detect->is('AndroidOS')) {
-                $this->link = $this->data['android'] ?? $linkDefault;
+                $this->link = isset($this->data['android']) ? $this->data['android'] : $linkDefault;
             } elseif ($detect->is('BlackBerryOS')) {
-                $this->link = $this->data['black_berry'] ?? $linkDefault;
+                $this->link = isset($this->data['black_berry']) ? $this->data['black_berry'] : $linkDefault;
             } elseif ($detect->is('PalmOS')) {
-                $this->link = $this->data['palm'] ?? $linkDefault;
+                $this->link = isset($this->data['palm']) ? $this->data['palm'] : $linkDefault;
             } elseif ($detect->is('WindowsMobileOS') || $detect->is('WindowsPhoneOS')) {
-                $this->link = $this->data['windows_mobile'] ?? $linkDefault;
+                $this->link = isset($this->data['windows_mobile']) ? $this->data['windows_mobile'] : $linkDefault;
             } elseif ($detect->is('MeeGoOS')) {
-                $this->link = $this->data['mee_go'] ?? $linkDefault;
+                $this->link = isset($this->data['mee_go']) ? $this->data['mee_go'] : $linkDefault;
             } elseif ($detect->is('MaemoOS')) {
-                $this->link = $this->data['mae_mo'] ?? $linkDefault;
+                $this->link = isset($this->data['mae_mo']) ? $this->data['mae_mo'] : $linkDefault;
             } elseif ($detect->is('JavaOS')) {
-                $this->link = $this->data['java'] ?? $linkDefault;
+                $this->link = isset($this->data['java']) ? $this->data['java'] : $linkDefault;
             } elseif ($detect->is('webOS')) {
-                $this->link = $this->data['web_os'] ?? $linkDefault;
+                $this->link = isset($this->data['web_os']) ? $this->data['web_os'] : $linkDefault;
             } elseif ($detect->is('badaOS')) {
-                $this->link = $this->data['bada_os'] ?? $linkDefault;
+                $this->link = isset($this->data['bada_os']) ? $this->data['bada_os'] : $linkDefault;
             } elseif ($detect->is('BREWOS')) {
-                $this->link = $this->data['brewos'] ?? $linkDefault;
+                $this->link = isset($this->data['brewos']) ? $this->data['brewos'] : $linkDefault;
             } else {
                 $this->link = $linkDefault;
             }
@@ -118,7 +119,7 @@ if (!class_exists('nguyenanhung\Classes\Helper\Mobile\DeviceDetectLink')) {
          * @copyright: 713uk13m <dev@nguyenanhung.com>
          * @time     : 08/18/2021 38:31
          */
-        public function getLink(): string
+        public function getLink()
         {
             return $this->link;
         }
