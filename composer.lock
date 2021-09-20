@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67914b766e19dc897bc9be38a67c8632",
+    "content-hash": "4d2f5581fee95a2d67f4a448e6098b7a",
     "packages": [
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -76,7 +76,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0"
+        "php": ">=5.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"

@@ -7,6 +7,38 @@
  * Date: 09/20/2021
  * Time: 19:18
  */
+if (!function_exists('getVersionHelperMobileByBear')) {
+    /**
+     * Function getVersionHelperMobileByBear
+     *
+     * @return string
+     * @author   : 713uk13m <dev@nguyenanhung.com>
+     * @copyright: 713uk13m <dev@nguyenanhung.com>
+     * @time     : 09/20/2021 14:08
+     */
+    function getVersionHelperMobileByBear()
+    {
+        $helper = new nguyenanhung\Classes\Helper\Mobile\AppleLink();
+
+        return $helper->getVersion();
+    }
+}
+if (!function_exists('getInfoPropertiesHelperMobileByBear')) {
+    /**
+     * Function getInfoPropertiesHelperMobileByBear
+     *
+     * @return array
+     * @author   : 713uk13m <dev@nguyenanhung.com>
+     * @copyright: 713uk13m <dev@nguyenanhung.com>
+     * @time     : 09/20/2021 19:26
+     */
+    function getInfoPropertiesHelperMobileByBear()
+    {
+        $helper = new nguyenanhung\Classes\Helper\Mobile\AppleLink();
+
+        return $helper->getHelperProperties();
+    }
+}
 if (!function_exists('appleMailLink')) {
     /**
      * Function appleMailLink

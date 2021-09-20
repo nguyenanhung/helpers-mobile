@@ -19,10 +19,11 @@ namespace nguyenanhung\Classes\Helper\Mobile;
  */
 interface Environment
 {
-    const VERSION       = '1.0.0';
-    const LAST_MODIFIED = '2021-09-01';
+    const VERSION       = '1.0.1';
+    const LAST_MODIFIED = '2021-09-20';
     const AUTHOR_NAME   = 'Hung Nguyen';
     const AUTHOR_EMAIL  = 'dev@nguyenanhung.com';
+    const AUTHOR_URL  = 'https://nguyenanhung.com';
     const PROJECT_NAME  = 'Basic Helper for Mobile Device';
 
     /**
